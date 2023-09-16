@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const data = require('../../models/data')
 
-router.get('/',  async(req, res) => {
+router.get('/api',  async(req, res) => {
   try {
     const coinData = data.currencies
     const source = req.query.source
@@ -18,7 +18,7 @@ router.get('/',  async(req, res) => {
       amountChange = amountChange.split('$').join("")
       amount = Math.round(amountChange * rates[source][target] * 100) / 100
     }
-    res.render('index', { amount })
+    res.status(200).json({ msg: 'success', amount: `${amount}`})
   } catch (err) {
     console.log(err)
     res.status(500).json({ error: 'Server Error!'})
