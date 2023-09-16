@@ -1,1 +1,25 @@
-<h1>111111</h1>
+<form id="coin" action="/">
+  <div class="mb-3">
+    <label for="lang">想要轉換的幣別:</label>
+    <select name="source" id="source">
+      <option value="select">選擇幣別</option>
+      <option id="TWD" name="TWD" value="TWD">TWD</option>
+      <option id="JPY" name="JPY" value="JPY">JPY</option>
+      <option id="USD" name="USD" value="USD">USD</option>
+    </select>
+    <input type="text" class="form-control" id="amount" placeholder="請輸入金額" name="amount"/>
+  </div>
+  <div class="mb-3">
+    <label for="lang">兌換後的幣別:</label>
+    <select name="target" id="target">
+      <option value="select">選擇幣別</option>
+      <option id="TWD" name="TWD" value="TWD">TWD</option>
+      <option id="JPY" name="JPY" value="JPY">JPY</option>
+      <option id="USD" name="USD" value="USD">USD</option>
+    </select>
+    <p class="mb-1">
+      {{amount}}
+    </p>
+  </div>
+  <input type="submit" value="Submit" />
+</form>

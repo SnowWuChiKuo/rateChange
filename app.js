@@ -11,7 +11,7 @@ app.engine('hbs', handlebars({ defaultLayout: 'main', extname: 'hbs' }))
 //透過app.set告訴Express說要設定的 view engine 是 handlebars
 app.set('view engine', 'hbs') //若engine是handlebars是縮寫，此處的handlebars也是要縮寫
 
-
+app.use(express.urlencoded({ extended: true }))
 app.use(routes)
 
 // 啟動並監聽伺服器
