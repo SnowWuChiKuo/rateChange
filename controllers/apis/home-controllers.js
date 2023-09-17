@@ -32,10 +32,13 @@ const homeControllers = {
         amountChange = amountChange.split('$').join("")
         amount = Math.round(amountChange * rates[source][target] * 100) / 100
       }
-      res.status(200).json({ msg: 'success', amount: `${amount}` })
+      res.status(200).json({ msg: 'success', amount: `$${amount}` })
     } catch (err) {
-      console.log(err)
-      res.status(500).json({ error: 'Server Error!' })
+      if (!err) {
+        return res.status(500).json({ error: 'Server Error!' })
+      } else {
+        console.log(err)
+      }
     }
   }
 }

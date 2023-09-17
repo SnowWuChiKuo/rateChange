@@ -19,8 +19,11 @@ const homeControllers = {
       }
       res.render('index', { amount, source, target })
     } catch (err) {
-      console.log(err)
-      res.status(500).json({ error: 'Server Error!' })
+      if (!err) {
+        return res.status(500).json({ error: 'Server Error!' })
+      } else {
+        console.log(err)
+      }
     }
   }
 }
