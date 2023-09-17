@@ -1,6 +1,6 @@
 const express = require('express')
 const handlebars = require('express-handlebars')
-const routes = require('./routes')
+const { pages, apis } = require('./routes')
 
 const app = express()
 // 建立 port 號碼
@@ -12,9 +12,13 @@ app.engine('hbs', handlebars({ defaultLayout: 'main', extname: 'hbs' }))
 app.set('view engine', 'hbs') //若engine是handlebars是縮寫，此處的handlebars也是要縮寫
 
 app.use(express.urlencoded({ extended: true }))
-app.use(routes)
+
+app.use('/apis', apis)
+app.use(pages)
 
 // 啟動並監聽伺服器
 app.listen(port, () => {
   console.log(`Express is running on http://localhost:${port}`)
 })
+
+module.exports = app
