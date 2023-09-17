@@ -12,6 +12,21 @@ const homeControllers = {
         JPY: coinData.JPY,
         USD: coinData.USD,
       }
+
+      if (source !== 'TWD' && source !== 'JPY' && source !== 'USD') {
+        return res.status(400).json({
+          status: 'error',
+          message: 'Please enter normal currency'
+        })
+      }
+
+      if (target !== 'TWD' && target !== 'JPY' && target !== 'USD') {
+        return res.status(400).json({
+          status: 'error',
+          message: 'Please enter normal currency'
+        })
+      }
+
       if (rates[source] && rates[source][target]) {
         let amountChange = amount.split(',').join("")
         amountChange = amountChange.split('$').join("")
