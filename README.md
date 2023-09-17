@@ -7,7 +7,7 @@
 3. 使用者可以確認幣值交換所得到的金額
 
 ## 專案開發人員
-Snow[https://github.com/SnowWuChiKuo]
+[Snow](https://github.com/SnowWuChiKuo)
 
 ## 專案本地安裝流程
 1. 請確認電腦已經安裝 Node.js、npm
