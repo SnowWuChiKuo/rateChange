@@ -17,7 +17,7 @@ const homeControllers = {
         amountChange = amountChange.split('$').join("")
         amount = Math.round(amountChange * rates[source][target] * 100) / 100
       }
-      res.render('index', { amount })
+      res.render('index', { amount, source, target })
     } catch (err) {
       console.log(err)
       res.status(500).json({ error: 'Server Error!' })
