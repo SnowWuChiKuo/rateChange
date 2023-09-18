@@ -40,8 +40,14 @@ http://localhost:3000/apis
 - target 是想兌換的貨幣  (目前的幣值 TWD, JPY, USD)
 - amount 是想兌換的金額  
 - 最後顯示在畫面上的是 兌換後的貨幣金額
-
+7. 若需使用測試請使用以下指令
+```
+npm run testM
+```
 ## 後端開發工具
 express: v4.16.4  
 express-handlebars: v5.3.3  
 body-parser: v1.20.2  
+chai: v4.3.8
+mocha: v10.2.0
+should: v13.2.3
